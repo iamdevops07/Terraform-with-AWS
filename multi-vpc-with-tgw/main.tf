@@ -2,6 +2,8 @@ provider "aws" {
   region = local.region
 }
 
+data "aws_availability_zones" "available" {}
+
 module "staging_vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "~> 3.0"
