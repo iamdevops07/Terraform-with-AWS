@@ -116,7 +116,7 @@ module "tgw" {
   source = "terraform-aws-modules/transit-gateway/aws"
 
   name            = local.tgw_name
-  description     = "My TGW shared with several other AWS accounts"
+  description     = "My TGW shared with Mutliple VPC"
   # When "true" there is no need for RAM resources if using multiple AWS accounts
   enable_auto_accept_shared_attachments = true
   
@@ -167,9 +167,6 @@ module "tgw" {
       ]
     },
   }
-
-  ram_allow_external_principals = true
-  ram_principals                = [307990089504]
 
   tags = local.qa_tags
 }
