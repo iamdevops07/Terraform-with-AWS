@@ -2,7 +2,7 @@ locals {
   tgw_name          = "mutli-vpc-tgw"
   staging_name      = "staging"
   mgmt_name         = "mangement"
-  qa_name           = "qa"
+  prod_name         = "prod"
   region            = "us-east-1"
 
   staging_vpc_cidr  = "10.10.0.0/16"
@@ -13,8 +13,8 @@ locals {
   staging_tags = {
     environment = local.staging_name
   }
-  qa_tags = {
-    environment = local.qa_name
+  prod_tags = {
+    environment = local.prod_name
   }
 
 }
