@@ -29,11 +29,6 @@ module "staging_vpc" {
   manage_default_security_group = true
   default_security_group_tags   = { Name = "${local.staging_name}-default" }
 
-  private_subnet_tags = {
-    "kubernetes.io/cluster/${local.staging_name}" = "shared"
-    "kubernetes.io/role/internal-elb"     = 1
-  }
-
   tags = local.staging_tags
 }
 
@@ -61,11 +56,6 @@ module "qa_vpc" {
   default_route_table_tags      = { Name = "${local.qa_name}-default" }
   manage_default_security_group = true
   default_security_group_tags   = { Name = "${local.qa_name}-default" }
-
-  private_subnet_tags = {
-    "kubernetes.io/cluster/${local.qa_name}" = "shared"
-    "kubernetes.io/role/internal-elb"     = 1
-  }
 
   tags = local.qa_tags
 }
@@ -95,16 +85,6 @@ module "mgmt_vpc" {
   default_route_table_tags      = { Name = "${local.mgmt_name}-default" }
   manage_default_security_group = true
   default_security_group_tags   = { Name = "${local.mgmt_name}-default" }
-
-  public_subnet_tags = {
-    "kubernetes.io/cluster/${local.mgmt_name}" = "shared"
-    "kubernetes.io/role/elb"              = 1
-  }
-
-  private_subnet_tags = {
-    "kubernetes.io/cluster/${local.mgmt_name}" = "shared"
-    "kubernetes.io/role/internal-elb"     = 1
-  }
 
   tags = local.mgmt_tags
 }
