@@ -1,8 +1,8 @@
 locals {
-  tgw_name          = "explorex_tgw"
-  staging_name      = "explorex_staging"
-  mgmt_name         = "explorex_mangement"
-  qa_name           = "explorex_qa"
+  tgw_name          = "mutli-vpc-tgw"
+  staging_name      = "staging"
+  mgmt_name         = "mangement"
+  qa_name           = "qa"
   region            = "us-east-1"
 
   staging_vpc_cidr  = "10.10.0.0/16"
