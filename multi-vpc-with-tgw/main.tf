@@ -151,6 +151,4 @@ module "tgw" {
       ]
     },
   }
-
-  tags = local.qa_tags
 }
